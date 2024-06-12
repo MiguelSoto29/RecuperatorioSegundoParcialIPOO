@@ -1,17 +1,13 @@
 <?php
-/*
- 
-De los canales se conoce el tipo de canal, importe y si es HD o no. Algunos ejemplos de tipos de canal son: noticias, interés general, musical, deportivo, películas, educativo, infantil, educativo infantil, aventura.
-*/
 class Canal{
     
-    //ATRIBUTOS
-    private $tipo;   //noticias, interés general, musical, deportivo, películas, educativo, infantil, educativo infantil, aventura.
+
+    private $tipo;   
     private $importe;
     private $esHD;
     private $incluyeMG;
 
- //CONSTRUCTOR
+   
     public function __construct($tipo, $importe, $esHD,$incluyeMG){
     
        $this->tipo = $tipo;
@@ -56,13 +52,13 @@ class Canal{
          $this->incluyeMG= $incluyeMG;
     }
 
-public function __toString(){
-        //string $cadena
+  public function __toString(){
+
         $cadena = "Tipo: ".$this->getTipo()."\n";
         $cadena = $cadena. "Importe: ".$this->getImporte()."\n";
         $cadena = $cadena. "Es HD: ".$this->getEsHD()."\n";
         $cadena = $cadena. "Incluye MG: ".$this->getIncluyeMG()."\n";
  
         return $cadena;
-         }
-     }    
+  }
+}

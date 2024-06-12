@@ -1,14 +1,11 @@
 <?php
 class Cliente{
     
-    //ATRIBUTOS
-  
     private $denominacion;
     private $cuit;
-    private $direccion;  //al día, moroso, suspendido
+    private $direccion; 
 
 
- //CONSTRUCTOR
     public function __construct($denominacion, $cuit, $direccion){
     
        $this->denominacion = $denominacion;
@@ -40,13 +37,12 @@ class Cliente{
     }
 
 
-public function __toString(){
-        //string $cadena
+    public function __toString(){
         $cadena = "Denominacion: ".$this->getDenominacion()."\n";
-         $cadena = $cadena. "CUIT: ".$this->getCuit()."\n";
+        $cadena = $cadena. "CUIT: ".$this->getCuit()."\n";
         $cadena = $cadena. "Direccion: ".$this->getDireccion()."\n";
  
         return $cadena;
-         }
+    }
 
 }

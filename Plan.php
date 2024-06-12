@@ -1,18 +1,13 @@
-
 <?php
-/*
- 
-De los planes se almacena un código, canales, importe y si incluye MG de datos o no. Por defecto se asume que el plan incluye 50 MG. 
-*/
 class Plan{
     
-    //ATRIBUTOS
+
     private $codigo;
     private $colCanales;
     private $importe;
     private $incluyeMG;
 
- //CONSTRUCTOR
+    
     public function __construct($codigo, $colCanales, $importe){
     
        $this->codigo = $codigo;
@@ -23,7 +18,7 @@ class Plan{
 
     }
 
-        public function getCodigo(){
+    public function getCodigo(){
         return $this->codigo;
     }
 
@@ -32,7 +27,7 @@ class Plan{
     }
 
 
-       public function getColCanales(){
+    public function getColCanales(){
         return $this->colCanales;
     }
 
@@ -41,7 +36,7 @@ class Plan{
     }
 
 
-      public function getImporte(){
+    public function getImporte(){
         return $this->importe;
     }
 
@@ -50,27 +45,28 @@ class Plan{
     }
 
 
-      public function getIncluyeMG(){
+    public function getIncluyeMG(){
         return $this->incluyeMG;
     }
 
     public function setIncluyeMG($incluyeMG){
          $this->incluyeMG= $incluyeMG;
     }
- private function retornarCadenaDesdeColeccion($coleccion){
+
+    private function retornarCadenaDesdeColeccion($coleccion){
         $cadena = "\n Cant Equipos: ". count($coleccion)."\n";
         foreach ($coleccion as $unElementoCol) {
             $cadena = $cadena . " " . $unElementoCol . "\n";
         }
         return $cadena;
     }
-public function __toString(){
-        //string $cadena
+
+    public function __toString(){
         $cadena = "Codigo: ".$this->getCodigo()."\n";
         $cadena = $cadena. "Canales: ".$this->retornarCadenaDesdeColeccion($this->getColCanales())."\n";
         $cadena = $cadena. "Importe: ".$this->getImporte()."\n";
         $cadena = $cadena. "Incluye MG: ".$this->getIncluyeMG()."\n";
  
         return $cadena;
-         }
-     }
+    }
+}
